@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    if ($is_jwt_valid['status']) {
       $data = json_decode(file_get_contents("php://input"), TRUE);
       if (
-         !isset($data['name']) || !isset($data['date']) || !isset($data['note']) ||
-         empty(trim($data['name'])) || empty(trim($data['date'])) || empty(trim($data['note']))
+         !isset($data['name']) || !isset($data['date']) ||
+         empty(trim($data['name'])) || empty(trim($data['date']))
       ) {
          $res = res(0, 422, '内容に不備があります。');
       } else {

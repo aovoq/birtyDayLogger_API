@@ -86,7 +86,7 @@ JWT による Authorization
 | ヘッダー | 必須   | `Authorization` | `` Bearer `JWT`  `` |
 | ボディ   | 必須   | `name`          | `String`            |
 | ボディ   | 必須   | `date`          | `` `int` - `int` `` |
-| ボディ   | 必須   | `note`          | `String`            |
+| ボディ   | 任意   | `note`          | `String`            |
 
 ### UserUpdate
 
@@ -98,7 +98,7 @@ JWT による Authorization
 | ボディ   | 必須   | `id`            | `` `DataID` ``      |
 | ボディ   | 必須   | `name`          | `String`            |
 | ボディ   | 必須   | `date`          | `` `int` - `int` `` |
-| ボディ   | 必須   | `note`          | `String`            |
+| ボディ   | 任意   | `note`          | `String`            |
 
 ### UserRead
 
