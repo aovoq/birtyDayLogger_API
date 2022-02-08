@@ -55,9 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       } elseif (strlen($password) < 8) {
          $res = res(0, 422, 'パスワードが短すぎます、8文字以上入力してください。');
       } else {
-         $usersJson = file_get_contents('../data/users.json');
-         $usersJson = json_decode($usersJson);
-         $userIndex = array_search($email, array_column($usersJson, 'email'));
+         $userIndex = false;
+         $usersJson = array();
+         if (file_exists('../data/users.json')) {
+            $usersJson = file_get_contents('../data/users.json');
+            $usersJson = json_decode($usersJson);
+            $userIndex = array_search($email, array_column($usersJson, 'email'));
+         }
 
          if ($userIndex !== false) {
             $res = res(0, 422, 'そのメールアドレスは既に登録されています。');
