@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: DELETE");
 
-require_once 'jwt.php';
+require_once '../jwt.php';
 
 function res($success, $status, $message, $extra = []) {
    return array_merge([
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
          if (strlen($password) < 8) {
             $res = res(0, 422, 'パスワードが短すぎます、8文字以上入力してください。');
          } else {
-            $usersJson = file_get_contents('data/users.json');
+            $usersJson = file_get_contents('../data/users.json');
             $usersJson = json_decode($usersJson, TRUE);
             $deletedJson = deleteUser($usersJson, $is_jwt_valid['id'], $password);
 
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
                $res = res(0, 422, 'パスワードが正しくありません。');
             } else {
                $usersJson = json_encode($deletedJson);
-               file_put_contents('data/users.json', $usersJson);
-               unlink('data/user/' . $is_jwt_valid['id'] . '.json');
+               file_put_contents('../data/users.json', $usersJson);
+               unlink('../data/user/' . $is_jwt_valid['id'] . '.json');
                $res = res(1, 410, 'Deleted User');
             }
          }

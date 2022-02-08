@@ -33,7 +33,7 @@ function registerUser($json, $email, $password) {
       "password" => password_hash($password, PASSWORD_DEFAULT),
    );
    $json = json_encode($json);
-   $result = file_put_contents('data/users.json', $json);
+   $result = file_put_contents('../data/users.json', $json);
    return $result;
 }
 
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       } elseif (strlen($password) < 8) {
          $res = res(0, 422, 'パスワードが短すぎます、8文字以上入力してください。');
       } else {
-         $usersJson = file_get_contents('data/users.json');
+         $usersJson = file_get_contents('../data/users.json');
          $usersJson = json_decode($usersJson);
          $userIndex = array_search($email, array_column($usersJson, 'email'));
 

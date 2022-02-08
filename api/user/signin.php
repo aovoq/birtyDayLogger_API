@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 
-require_once 'jwt.php';
+require_once '../jwt.php';
 $res = '';
 
 function res($success, $status, $message, $extra = []) {
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       } elseif (strlen($password) < 8) {
          $res = res(0, 422, 'パスワードが短すぎます、8文字以上入力してください。');
       } else {
-         $usersJson = file_get_contents('data/users.json');
+         $usersJson = file_get_contents('../data/users.json');
          $usersJson = json_decode($usersJson, TRUE);
          $isMatch = checkUser($usersJson, $email, $password);
 
