@@ -35,11 +35,11 @@ JWT による Authorization
 
 ## User
 
-| FUNCTION     | METHOD | URI                    | PARAMETER |
-| ------------ | ------ | ---------------------- | --------- |
-| UserRegister | POST   | /api/user/register.php |           |
-| UserSignin   | POST   | /api/user/signin.php   |           |
-| UserDelete   | DELETE | /api/user/delete.php   |           |
+| FUNCTION     | METHOD | URI                    |
+| ------------ | ------ | ---------------------- |
+| UserRegister | POST   | /api/user/register.php |
+| UserSignin   | POST   | /api/user/signin.php   |
+| UserDelete   | DELETE | /api/user/delete.php   |
 
 ### UserRegister
 
@@ -72,12 +72,12 @@ JWT による Authorization
 
 ## Data
 
-| FUNCTION   | METHOD | URI                      | PARAMETER |
-| ---------- | ------ | ------------------------ | --------- |
-| DataAdd    | POST   | /api/birthday/add.php    |           |
-| DataUpdate | POST   | /api/birthday/update.php |           |
-| DataRead   | GET    | /api/birthday/read.php   |           |
-| DataDelete | DELETE | /api/birthday/delete.php |           |
+| FUNCTION   | METHOD | URI                      |
+| ---------- | ------ | ------------------------ |
+| DataAdd    | POST   | /api/birthday/add.php    |
+| DataUpdate | POST   | /api/birthday/update.php |
+| DataRead   | GET    | /api/birthday/read.php   |
+| DataDelete | DELETE | /api/birthday/delete.php |
 
 ### UserAdd
 
