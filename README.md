@@ -15,9 +15,9 @@ BirtyDayLogger のための API です。
 -  ユーザーによるログの削除
 -  ユーザーによるログの一覧
 
-### 認証・認可方式???(この辺曖昧 勉強不足)
+### 認証・認可方式
 
-JWT による Authorization
+JWT による Header Authorization
 
 ## 要求
 
